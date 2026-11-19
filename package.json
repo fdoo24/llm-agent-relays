@@ -1,0 +1,28 @@
+{
+  "name": "llm-agent-relays",
+  "version": "1.0.0",
+  "description": "Zero-dependency local LLM proxies & protocol adapters for AutoClaw, OpenClaw, and AI agents",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "openrouter": "node relays/openrouter-relay.js",
+    "groq": "node relays/groq-relay.js",
+    "gemini": "node relays/gemini-relay.js",
+    "status": "node scripts/diag.js",
+    "diag": "node scripts/diag.js --deep"
+  },
+  "keywords": [
+    "llm",
+    "relay",
+    "proxy",
+    "openclaw",
+    "autoclaw",
+    "openrouter",
+    "groq",
+    "gemini",
+    "socks5",
+    "ai-agent"
+  ],
+  "author": "fdoo24",
+  "license": "MIT"
+}

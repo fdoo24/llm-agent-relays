@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  llm-agent-relays:
+    build: .
+    container_name: llm-agent-relays
+    restart: unless-stopped
+    ports:
+      - "8818:8818"
+      - "8819:8819"
+      - "8820:8820"
+    environment:
+      - RELAY_LISTEN_HOST=0.0.0.0
+      - RELAY_PROXY_HOST=host.docker.internal
+      - RELAY_PROXY_PORTS=12334,10808
+      - RELAY_ALLOW_DIRECT=0
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
